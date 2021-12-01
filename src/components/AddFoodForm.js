@@ -34,7 +34,7 @@ function AddFoodForm({ addNewFood }) {
       <Divider>Add Food Entry</Divider>
 
       {/* <form onSubmit={handleSubmit}> */}
-      <form onSubmit={handleSubmit}>
+      <form>
         <label>Name:</label>
         <Input type="text" name="name" value={name} onChange={handleName} />
 
@@ -57,7 +57,9 @@ function AddFoodForm({ addNewFood }) {
           onChange={handleServings}
         />
 
-        <button type="submit">Create</button>
+        <Button onClick={handleSubmit} type="submit">
+          Create
+        </Button>
       </form>
     </div>
   );

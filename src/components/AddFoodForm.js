@@ -1,11 +1,13 @@
-import { useState } from 'react/cjs/react.development';
-import { Input, Col, Divider, Button } from 'antd';
+//Controled component -> has an input, handler and state
+
+import { useState } from 'react';
+import { Input, Divider, Button } from 'antd';
 
 function AddFoodForm({ addNewFood }) {
   const [name, setName] = useState('');
   const [image, setImage] = useState('');
-  const [calories, setCalories] = useState(1);
-  const [servings, setServings] = useState(1);
+  const [calories, setCalories] = useState(0);
+  const [servings, setServings] = useState(0);
 
   const handleName = (event) => setName(event.target.value);
   const handleImage = (event) => setImage(event.target.value);
@@ -21,7 +23,7 @@ function AddFoodForm({ addNewFood }) {
       calories: calories,
       servings: servings,
     };
-    console.log('newFood :>> ', newFood);
+
     addNewFood(newFood);
 
     setName('');
@@ -32,8 +34,6 @@ function AddFoodForm({ addNewFood }) {
   return (
     <div className="AddFood">
       <Divider>Add Food Entry</Divider>
-
-      {/* <form onSubmit={handleSubmit}> */}
       <form>
         <label>Name:</label>
         <Input type="text" name="name" value={name} onChange={handleName} />

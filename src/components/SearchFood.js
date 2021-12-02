@@ -1,5 +1,5 @@
 import { useState } from 'react/cjs/react.development';
-import { Input, Col, Divider, Button } from 'antd';
+import { Input, Divider } from 'antd';
 
 function SearchFood({ searchFoodList }) {
   const [foodName, setFoodName] = useState(' ');

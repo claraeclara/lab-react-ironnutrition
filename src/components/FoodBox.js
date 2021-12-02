@@ -1,4 +1,4 @@
-import { Card, Col, Divider, Button } from 'antd';
+import { Card, Col, Button } from 'antd';
 import React from 'react';
 
 function FoodBox({ food, deleteFood }) {
@@ -12,6 +12,7 @@ function FoodBox({ food, deleteFood }) {
           <b>Total Calories: {food.calories * food.servings}</b>
           kcal
         </p>
+        {/* onClick buttons always have to use an inactive function */}
         <Button type="primary" onClick={() => deleteFood(food.name)}>
           Delete
         </Button>
